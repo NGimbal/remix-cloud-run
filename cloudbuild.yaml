@@ -1,0 +1,20 @@
+steps:
+  # Build the container image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA",
+        "--build-arg",
+        "REMIX_TOKEN=$_REMIX_TOKEN",
+        "."
+      ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', '$_SERVICE_NAME', '--image', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA', '--region', '$_DEPLOY_REGION']
+images: [
+  "gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA"
+]

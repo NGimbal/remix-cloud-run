@@ -1,0 +1,19 @@
+"hosting": [
+    {
+      "site": "bldgforum-gcloud",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "run": {
+            "serviceId": "bldgforum-gcloud"
+          }
+        }
+      ]
+    }
+  ],
