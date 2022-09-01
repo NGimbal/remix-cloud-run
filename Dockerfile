@@ -1,4 +1,5 @@
 # # base node image
+# # https://github.com/moby/buildkit/issues/1271
 FROM node:16-bullseye-slim as base
 ARG REMIX_TOKEN
 ENV REMIX_TOKEN=${REMIX_TOKEN}
@@ -26,6 +27,6 @@ RUN mkdir /app/
 WORKDIR /app/
 ADD package.json package-lock.json .npmrc /app/
 COPY --from=build /app/public /app/public
-COPY --from=build /app/server /app/server
+COPY --from=build /app/build /app/build
 COPY --from=production-deps /app/node_modules /app/node_modules
 CMD ["node", "server/index.js"]
