@@ -29,4 +29,4 @@ ADD package.json package-lock.json .npmrc /app/
 COPY --from=build /app/public /app/public
 COPY --from=build /app/build /app/build
 COPY --from=production-deps /app/node_modules /app/node_modules
-CMD ["node", "server/index.js"]
+CMD ["npm", "start"]
