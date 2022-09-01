@@ -1,3 +1,12 @@
+# Remix Cloud Run
+
+Boilerplate Remix app deployable to Google Cloud Run via Google Cloud Build trigger.
+
+Based on this excellent resource:
+https://gist.github.com/TheRealFlyingCoder/80556cb29463ae3d2b424f61e8e5830d
+
+Adapted to use the Remix App Server instead of Cloudflare (very minor changes).
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
