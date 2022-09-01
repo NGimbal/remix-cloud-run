@@ -1,7 +1,7 @@
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix in a Docker Container</h1>
+      <h1>Welcome to Remix served from Google Cloud Run!</h1>
       <ul>
       <li>
           <a
@@ -10,6 +10,15 @@ export default function Index() {
             rel="noreferrer"
           >
             Remix in Google Cloud run Gist
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-nodejs-service#remove_your_test_project"
+            rel="noreferrer"
+          >
+            Deploy a Node app to Cloud Run
           </a>
         </li>
         <li>
