@@ -1,6 +1,7 @@
-"hosting": [
+{
+  "hosting": [
     {
-      "site": "bldgforum-gcloud",
+      "site": "bldgforum",
       "public": "public",
       "ignore": [
         "firebase.json",
@@ -16,4 +17,5 @@
         }
       ]
     }
-  ],
+  ]
+}
